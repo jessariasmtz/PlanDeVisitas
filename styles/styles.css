@@ -1,0 +1,319 @@
+:root {
+    --txtBlack: #282828;
+    --txtGrey: #606060;
+    --lineGrey: #dfe1e5;
+    --elementGrey: #606060;
+    --bgGrey: #f9f9f9;
+    --blue: #00a0ef;
+    --navBlack: #282828;
+    --navBtnGrey: #3e3e3e;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--bgGrey);
+}
+
+/*NAV*/
+
+nav {
+    background-color: var(--navBlack);
+}
+
+nav ul {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 50px;
+    column-gap: 5px;
+    padding: 10px 25px;
+}
+
+nav ul li {
+    display: grid;
+    list-style: none;
+    align-items: center;
+    padding-left: 10px;
+}
+
+#home-link {
+    padding: 0;
+}
+
+nav ul li:hover {
+    background-color: var(--navBtnGrey);
+}
+
+nav ul li a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+}
+
+nav ul li a i {
+    margin: 0 4px;
+}
+
+#nav-logo {
+    width: 35px;
+    border-radius: 50%;
+}
+
+/*FIN NAV*/
+
+#page-titulo-left {
+    text-align: left;
+    margin: 10px 0;
+    color: var(--txtBlack);
+}
+
+/*LOGIN*/
+
+#page-titulo {
+    text-align: center;
+    margin: 25px 0;
+    color: var(--txtBlack);
+}
+
+.contenedor {
+    padding: 5px 10px;
+}
+
+#login-contenedor {
+    display: flex;
+    flex-direction: column;
+    vertical-align: middle;
+    max-width: 390px;
+    background-color: white;
+    border: 1px solid #dfe1e5;
+    border-radius: 10px;
+    padding: 35px 0;;
+    margin: 0 auto;
+    align-items: center;
+}
+
+#login-contenedor div {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#login-logo {
+    width: 100px;
+}
+
+#login-titulo {
+    font-size: 21px;
+    color: var(--txtBlack);
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+}
+
+#login-contenedor label {
+    color: var(--txtGrey);
+}
+
+input {
+    display: flex;
+    width: 70%;
+    border: 1px solid var(--lineGrey);
+    border-radius: 10px;
+    text-align: center;
+    justify-content: center;
+    margin: 5px 0 10px 0;
+    padding: 5px 0;
+}
+
+#login-contenedor button {
+    width: 70%;
+    padding:10px;
+    margin-top: 15px;
+    border-radius: 50px;
+    font-weight: bold;
+    border: 1px solid var(--lineGrey);
+    background-color: var(--bgGrey);
+}
+
+#login-contenedor button:hover{
+    border: 1px solid var(--lineGrey);
+    background-color: white;
+}
+
+/*FIN LOGIN*/
+
+/*CLIENTES*/
+#addClientesForm, #submitVisitas {
+    display: block;
+}
+
+#lista-clientes-contenedor, #lista-visitas-contenedor {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 5px;
+    width: 100%;
+}
+
+.clientes-card {
+    display: grid;
+    grid-template-columns: 50px 30px 1fr 1fr 1fr;
+    gap: 5px;
+    align-items: center;
+    border: 1px solid var(--lineGrey);
+    background-color: white;
+    border-radius: 12px;
+    padding: 8px 5px;
+    margin: 5px 0;
+    color: var(--txtGrey);
+    font-size: .9em;
+}
+
+.clientes-card:hover {
+    background-color: transparent;
+}
+
+.clientes-card div {
+    padding: 0 10px;
+}
+
+.clientes-ID {
+    text-align: center;
+}
+
+.clientes-check input {
+    margin: 0 auto;
+}
+
+.clientes-check input[type="checkbox"] {
+    display: flex;
+    flex: 1;
+}
+
+#btnAddClientes {
+    width: 20%;
+    padding:10px;
+    margin-top: 15px;
+    border-radius: 50px;
+    font-weight: bold;
+    color: white;
+    border: 1px solid var(--blue);
+    background-color: var(--blue);
+}
+
+#btnAddClientes:hover {
+    color: var(--blue);
+    background-color: white;
+}
+
+/*FIN CLIENTES*/
+
+/*CLIENTES FULL INFO*/
+.clientes-full-card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    align-items: flex-start;
+    border: 1px solid var(--lineGrey);
+    background-color: white;
+    border-radius: 12px;
+    padding: 8px 5px;
+    margin: 5px 0;
+    color: var(--txtGrey);
+    font-size: .9em;
+}
+
+.clientes-full-card span {
+    font-weight: bold;
+}
+
+/*FIN CLIENTES FULL INFO*/
+
+/*VISITAS*/
+
+.visit-card {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(150px, 155px)) minmax(50px, 80px) repeat(2, 1fr);
+    grid-template-rows: repeat(3,1fr);
+    gap: 5px;
+    grid-template-areas:
+    "fecha hora id nombre nombre"
+    "resp est . obj obj"
+    "cotiza cotiza . coment coment";
+
+    align-items: center;
+    border: 1px solid var(--lineGrey);
+    background-color: white;
+    border-radius: 12px;
+    padding: 5px;
+    margin-bottom: 5px;
+    font-size: .9em;
+}
+
+.visit-card:hover {
+    background-color: transparent;
+}
+
+.visit-card div {
+    padding: 0 5px;
+}
+
+.visit-card div input{
+    text-align: left;
+}
+
+.visita-obj input, .visita-coment input {
+    width: 100%;
+    height: auto;
+}
+
+.visita-fecha {
+    grid-area: fecha;
+}
+input[type="datetime"], input[type="date"], input[type="time"] {
+    text-align: center;
+}
+.visita-hour {
+    grid-area: hora;
+}
+.visita-ID {
+    grid-area: id;
+}
+.visita-ID input[type="number"] {
+    text-align: center;
+}
+.visita-nombre {
+    grid-area: nombre;
+}
+.visita-nombre p {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--blue);
+}
+.visita-responsable {
+    grid-area: resp;
+}
+.visita-estado {
+    grid-area: est;
+}
+.visita-obj {
+    grid-area: obj;
+}
+.visita-coment {
+    grid-area: coment;
+    padding: 0 10px;
+}
+.visita-cotiza {
+    grid-area: cotiza;
+}
+/*FIN VISITAS*/

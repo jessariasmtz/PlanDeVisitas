@@ -1,0 +1,87 @@
+:root {
+    --txtBlack: #282828;
+    --txtGrey: #606060;
+    --lineGrey: #dfe1e5;
+    --elementGrey: #606060;
+    --bgGrey: #f9f9f9;
+    --blue: #00a0ef;
+    --navBlack: #282828;
+    --navBtnGrey: #3e3e3e;
+}
+
+/*VISITAS*/
+
+.visit-card {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(150px, 155px)) minmax(50px, 80px) repeat(2, 1fr);
+    grid-template-rows: repeat(3,1fr);
+    gap: 5px;
+    grid-template-areas:
+    "fecha fecha id nombre nombre"
+    "resp resp est obj obj"
+    "cotiza cotiza . coment coment";
+
+    align-items: center;
+    border: 1px solid var(--lineGrey);
+    background-color: white;
+    border-radius: 12px;
+    padding: 5px;
+    margin-bottom: 5px;
+    font-size: .9em;
+}
+
+.visit-card:hover {
+    background-color: transparent;
+}
+
+.visit-card div {
+    padding: 0 5px;
+}
+
+.visit-card div input{
+    text-align: left;
+}
+.visit-card div input[type="datetime"], .visit-card div input[type="date"], .visit-card div input[type="time"] {
+    text-align: center;
+}
+.visita-obj input, .visita-coment input {
+    width: 100%;
+    height: auto;
+}
+
+.visita-fecha {
+    grid-area: fecha;
+}
+.visita-hour {
+    grid-area: hora;
+}
+.visita-ID {
+    grid-area: id;
+}
+.visita-ID input[type="number"] {
+    text-align: center;
+}
+.visita-nombre {
+    grid-area: nombre;
+}
+.visita-nombre p {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--blue);
+}
+.visita-responsable {
+    grid-area: resp;
+}
+.visita-estado {
+    grid-area: est;
+}
+.visita-obj {
+    grid-area: obj;
+}
+.visita-coment {
+    grid-area: coment;
+}
+.visita-cotiza {
+    grid-area: cotiza;
+}
+/*FIN VISITAS*/
