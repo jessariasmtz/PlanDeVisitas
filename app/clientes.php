@@ -11,6 +11,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="../styles/ver-visitas.css">
+    <link rel="icon" href="../img/tab-icon.png">
     <script src="https://kit.fontawesome.com/b09b9f2e11.js" crossorigin="anonymous"></script>
     <title>Clientes</title>
 </head>
