@@ -40,11 +40,11 @@ $userNombre = $user->getNombre();
                 echo "
                 <div class='visit-card'>
                     <div class='visita-fecha'>
-                        <input type='date' name='fecha-visita[]' requiered>
+                        <input type='date' name='fecha-visita[]' required>
                     </div>
 
                     <div class='visita-hour'>
-                        <input type='time' name='hora-visita[]' requiered>
+                        <input type='time' name='hora-visita[]' required>
                     </div>
 
                     <div class='visita-ID'>
@@ -57,14 +57,14 @@ $userNombre = $user->getNombre();
 
                     <div class='visita-responsable'>
                         <p>Responsable: </p>
-                        <select name='responsableID[]' requiered>
+                        <select name='responsableID[]' required>
                             <option value='$userID'>$userNombre</option>
                         </select>
                     </div>
 
                     <div class='visita-estado'>
                         <p>Estado: </p>
-                        <select name='estado[]' requiered>
+                        <select name='estado[]' required>
                             <option value='activo'>Activo</option>
                             <option value='inactivo'>inactivo</option>
                         </select>
@@ -72,7 +72,7 @@ $userNombre = $user->getNombre();
 
                     <div class='visita-obj'>
                         <p>Objetivo: </p>
-                        <input type='text' maxlength='32' name='objetivo[]' requiered>
+                        <input type='text' maxlength='32' name='objetivo[]' required>
                     </div>
 
                     <div class='visita-coment'>
