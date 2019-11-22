@@ -36,7 +36,7 @@ function getResultVisits($date, $id) {
 
             <div class='visita-coment'>
                 <p>Comentarios: </p>
-                <input type='text' maxlength='255' name='comentarios[]'  value='$row->Comentarios'>
+                <input type='text' maxlength='650' name='comentarios[]'  value='$row->Comentarios'>
             </div>
 
             <div class='visita-cotiza'>

@@ -77,7 +77,7 @@ $userNombre = $user->getNombre();
 
                     <div class='visita-coment'>
                         <p>Comentarios: </p>
-                        <input type='text' maxlength='255' name='comentarios[]'>
+                        <input type='text' maxlength='650' name='comentarios[]'>
                     </div>
 
                     <div class='visita-cotiza'>
