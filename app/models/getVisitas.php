@@ -1,5 +1,5 @@
 <?php
-function getResultVisits($date, $id) {
+function getVisitsByID($date, $id) {
     include 'Connection.php';
 
     $result = $conn->prepare("SELECT Visitas.ID, Visitas.Fecha, Visitas.Objetivo, Visitas.Comentarios, Visitas.Estado, Empleados.Nombre as 'Empleado', Empresas.Nombre, Visitas.Cotizacion FROM Visitas INNER JOIN Empleados ON Visitas.ResponsableID = Empleados.ID INNER JOIN Empresas ON Visitas.EmpresaID = Empresas.ID WHERE Visitas.Fecha LIKE '$date%'and Empleados.ID = '$id';");
@@ -46,6 +46,18 @@ function getResultVisits($date, $id) {
             </div>
         </div>";
     }
+
     $conn = null;
     $result = null;
+}
+
+function getAllVisits($date, $id) {
+    include 'Connection.php';
+
+    $result = $conn->prepare("SELECT Visitas.ID, Visitas.Fecha, Visitas.Objetivo, Visitas.Comentarios, Visitas.Estado, Empleados.Nombre as 'Empleado', Empresas.Nombre, Visitas.Cotizacion FROM Visitas INNER JOIN Empleados ON Visitas.ResponsableID = Empleados.ID INNER JOIN Empresas ON Visitas.EmpresaID = Empresas.ID WHERE Visitas.Fecha LIKE '$date%';");
+
+    $result->execute();
+    $conn = null;
+
+    return $result->fetch(PDO::FETCH_OBJ);
 }

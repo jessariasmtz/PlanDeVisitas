@@ -33,7 +33,7 @@ session_start();
         <div id='lista-visitas-contenedor'>
         
         <?php
-        getResultVisits($today, $user->getID());
+        getVisitsByID($today, $user->getID());
         ?>
         </div>
 

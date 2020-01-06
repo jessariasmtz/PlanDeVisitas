@@ -28,7 +28,7 @@ $user = unserialize($_SESSION['user']);
         <div id='lista-visitas-contenedor'>
         
         <?php
-        getResultVisits('', $user->getID());
+        getVisitsByID('', $user->getID());
         ?>
         </div>
 
