@@ -2,7 +2,7 @@
 function getVisitsByID($date, $id) {
     include 'Connection.php';
 
-    $result = $conn->prepare("SELECT Visitas.ID, Visitas.Fecha, Visitas.Objetivo, Visitas.Comentarios, Visitas.Estado, Empleados.Nombre as 'Empleado', Empresas.Nombre, Visitas.Cotizacion FROM Visitas INNER JOIN Empleados ON Visitas.ResponsableID = Empleados.ID INNER JOIN Empresas ON Visitas.EmpresaID = Empresas.ID WHERE Visitas.Fecha LIKE '$date%'and Empleados.ID = '$id';");
+    $result = $conn->prepare("SELECT Visitas.ID, Visitas.Fecha, Visitas.Objetivo, Visitas.Comentarios, Visitas.Estado, Empleados.Nombre as 'Empleado', Empresas.Nombre as 'Empresa', Visitas.Cotizacion, Contactos.Nombre as 'ContactoNombre', Contactos.Apellido as 'ContactoApellido', Contactos.Email, Sucursales.AreaUbicacion, Sucursales.Direccion FROM Visitas INNER JOIN Empleados ON Visitas.ResponsableID = Empleados.ID INNER JOIN Empresas ON Visitas.EmpresaID = Empresas.ID LEFT JOIN Contactos ON Empresas.ID = Contactos.EmpresaID LEFT JOIN Sucursales ON Empresas.ID = Sucursales.EmpresaID WHERE Visitas.Fecha LIKE '$date%'and Empleados.ID = '$id';");
 
     $result->execute();
 
@@ -18,7 +18,15 @@ function getVisitsByID($date, $id) {
             </div>
 
             <div class='visita-nombre'>
-                <p>$row->Nombre</p>
+                <p>$row->Empresa</p>
+            </div>
+
+            <div class='visita-contacto'>
+                <p>$row->ContactoNombre $row->ContactoApellido - $row->Email</p>
+            </div>
+
+            <div class='visita-direccion'>
+                <p>$row->AreaUbicacion - $row->Direccion</p>
             </div>
 
             <div class='visita-responsable'>

@@ -219,7 +219,7 @@ input {
 /*FIN CLIENTES*/
 
 /*CLIENTES FULL INFO*/
-.clientes-full-card {
+.clientes-card-content{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 5px;
@@ -237,10 +237,35 @@ input {
     font-weight: bold;
 }
 
+.clientes-card-content input {
+    display: inline-block;
+    border-radius: 4px;
+    max-width: 180px;
+    color: var(--txtGrey);
+    text-align: left;
+    font-size: 12px;
+    padding: 2px 0 2px 8px;
+}
+
+.clientes-card-content button {
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+    margin-left: 8px;
+}
+
+.clientes-card-content button i{
+    font-size: 1.25em;
+}
+
+.fa-plus-square {
+    color: var(--blue);
+}
+
 /*FIN CLIENTES FULL INFO*/
 
 /*VISITAS*/
-
+/* 
 .visit-card {
     display: grid;
     grid-template-columns: repeat(2, minmax(150px, 155px)) minmax(50px, 80px) repeat(2, 1fr);
@@ -248,8 +273,8 @@ input {
     gap: 5px;
     grid-template-areas:
     "fecha hora id nombre nombre"
-    "resp est . obj obj"
-    "cotiza cotiza . coment coment";
+    "resp est contacto contacto obj"
+    "cotiza cotiza direccion direccion coment";
 
     align-items: center;
     border: 1px solid var(--lineGrey);
@@ -269,7 +294,12 @@ input {
 }
 
 .visit-card div input{
+    border-radius: 4px;
+    max-width: 180px;
+    color: var(--txtGrey);
     text-align: left;
+    font-size: 12px;
+    padding: 2px 0 2px 8px;
 }
 
 .visita-obj input, .visita-coment input {
@@ -309,11 +339,17 @@ input[type="datetime"], input[type="date"], input[type="time"] {
 .visita-obj {
     grid-area: obj;
 }
+.visita-contacto {
+    grid-area: contacto;
+}
+.visita-direccion {
+    grid-area: direccion;
+}
 .visita-coment {
     grid-area: coment;
     padding: 0 10px;
 }
 .visita-cotiza {
     grid-area: cotiza;
-}
+} */
 /*FIN VISITAS*/

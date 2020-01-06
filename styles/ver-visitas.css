@@ -17,17 +17,40 @@
     grid-template-rows: repeat(3,1fr);
     gap: 5px;
     grid-template-areas:
-    "fecha fecha id nombre nombre"
-    "resp resp est obj obj"
-    "cotiza cotiza . coment coment";
+    "nombre nombre fecha fecha hora"
+    "resp est contacto contacto obj"
+    "cotiza cotiza direccion direccion coment";
 
-    align-items: center;
+    align-items: left;
     border: 1px solid var(--lineGrey);
     background-color: white;
     border-radius: 12px;
     padding: 5px;
     margin-bottom: 5px;
     font-size: .9em;
+}
+
+@media screen and (max-width:600px) {
+    .visit-card {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(7,1fr);
+        gap: 5px;
+        grid-template-areas:
+        "nombre nombre"
+        "fecha hora"
+        "resp est"
+        "contacto contacto"
+        "direccion direccion"
+        "coment coment"
+        "cotiza obj";
+        align-items: left;
+        border: 1px solid var(--lineGrey);
+        background-color: white;
+        border-radius: 12px;
+        padding: 5px;
+        margin-bottom: 5px;
+        font-size: .9em;
+    }
 }
 
 .visit-card:hover {
@@ -40,6 +63,11 @@
 
 .visit-card div input{
     text-align: left;
+    max-width: 100%;
+    padding: 4px;
+    color: var(--txtGrey);
+    font-size: 12px;
+    border-radius: 4px;
 }
 .visit-card div input[type="datetime"], .visit-card div input[type="date"], .visit-card div input[type="time"] {
     text-align: center;
@@ -57,12 +85,19 @@
 }
 .visita-ID {
     grid-area: id;
+    display: none;
 }
 .visita-ID input[type="number"] {
     text-align: center;
 }
 .visita-nombre {
     grid-area: nombre;
+}
+.visita-contacto {
+    grid-area: contacto;
+}
+.visita-direccion {
+    grid-area: direccion;
 }
 .visita-nombre p {
     font-size: 1.2em;
