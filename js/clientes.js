@@ -1,15 +1,15 @@
 // Trae ID, Nombre, RUC y Tipo de Empresa
-async function getEmpresa() {
+function getEmpresa() {
     const url = "../app/models/clientes/getEmpresa.php";
 
     fetch(url).then((res) => res.json())
         .then(response => {
-            await showEmpresaCard(response);
+            showEmpresaCard(response);
         }).catch(error => console.log(error));
 }
 
 // Crea los cards con la info de cada Empresa
-async function showEmpresaCard(empresa) {
+function showEmpresaCard(empresa) {
     let listContainer = document.getElementById("lista-visitas-contenedor");
 
     for (let i in empresa) {
