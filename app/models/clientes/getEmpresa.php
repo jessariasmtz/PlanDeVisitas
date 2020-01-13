@@ -7,7 +7,7 @@ try {
 
     $result = $conn->prepare("SELECT * FROM Empresas;");
     $result->execute();
-    $conn = null;
+    // $conn = null;
 
     var_dump(json_encode($result->fetchAll(PDO::FETCH_OBJ)));
     exit(json_encode($result->fetchAll(PDO::FETCH_OBJ)));
