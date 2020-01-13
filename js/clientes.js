@@ -9,7 +9,7 @@ function getEmpresa() {
 }
 
 // Crea los cards con la info de cada Empresa
-function showEmpresaCard(empresa) {
+async function showEmpresaCard(empresa) {
     let listContainer = document.getElementById("lista-visitas-contenedor");
 
     for (let i in empresa) {
