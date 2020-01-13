@@ -2,7 +2,7 @@
 function getEmpresa() {
     const url = "../app/models/clientes/getEmpresa.php";
 
-    fetch(url).then((res) => res.json())
+    fetch(url).then((res) => res.text()).then(console.log)
         .then(response => {
             showEmpresaCard(response);
         }).catch(error => console.log(error));
