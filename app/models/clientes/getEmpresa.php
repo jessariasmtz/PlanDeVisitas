@@ -9,7 +9,8 @@ try {
     $result->execute();
     $conn = null;
 
-    exit(json_encode($result->fetchAll(PDO::FETCH_OBJ)));
+    header('Content-Type: application/json');
+    echo json_encode($result->fetchAll(PDO::FETCH_OBJ));
 } catch(Exception $e) {
     echo "getAllCitas: $e->getMessage()";
 }
