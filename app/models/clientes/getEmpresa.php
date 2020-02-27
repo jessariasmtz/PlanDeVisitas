@@ -1,6 +1,6 @@
 <?php
 
-/* Mostrar la Empresa registrada */
+/* Mostrar Empresa */
 
 try {
     include '../Connection.php';
@@ -9,8 +9,7 @@ try {
     $result->execute();
     $conn = null;
 
-    header('Content-Type: application/json');
-    echo json_encode($result->fetchAll(PDO::FETCH_OBJ));
+    exit(json_encode($result->fetchAll(PDO::FETCH_ASSOC)));
 } catch(Exception $e) {
-    echo "getAllCitas: $e->getMessage()";
+    echo "Error: $e->getMessage()";
 }
