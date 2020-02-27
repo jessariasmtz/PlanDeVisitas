@@ -5,7 +5,7 @@
 try {
     include '../Connection.php';
 
-    $result = $conn->prepare("SELECT * FROM Empresas;");
+    $result = $conn->prepare("SELECT * FROM Empleados;");
     $result->execute();
     $conn = null;
 
